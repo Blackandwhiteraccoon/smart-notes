@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Notes - Notes Intelligentes</title>
-  <meta name="description" content="Application de notes intelligente avec analyse IA intégrée">
-  <meta name="theme-color" content="#6366f1">
+eta name="theme-color" content="#6366f1">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' style='stop-color:%236366f1'/%3E%3Cstop offset='100%' style='stop-color:%239c34ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23g)' rx='20'/%3E%3Cpath d='M20,50L80,50M35,30L35,70M50,30L50,70M65,30L65,70' stroke='%23fff' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%23fff'/%3E%3Ccircle cx='32' cy='23' r='3' fill='%23fff'/%3E%3Ccircle cx='44' cy='18' r='2.5' fill='%23fff'/%3E%3C/svg%3E">
   
@@ -328,5 +321,126 @@
     const root = ReactDOM.createRoot(document.getElementById('app'));
     root.render(React.createElement(App));
   </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  
+  <div class="min-h-screen">
+    <!-- Header -->
+    <div class="bg-white border-b border-slate-200 sticky top-0">
+      <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+            <span class="text-white text-2xl">✨</span>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-slate-800">Smart Notes</h1>
+            <p class="text-xs text-slate-500">IA intégrée</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-6 py-8">
+      
+      <!-- Input -->
+      <div class="bg-white rounded-2xl shadow-xl border mb-8">
+        <textarea 
+          id="note"
+          placeholder="Écrivez votre note ici..."
+          class="w-full h-48 p-6 rounded-t-2xl resize-none focus:outline-none"
+        ></textarea>
+        <div class="border-t bg-slate-50 px-6 py-4">
+          <button 
+            onclick="save()"
+            class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2.5 rounded-xl font-medium hover:shadow-lg"
+          >
+            ✨ Sauvegarder
+          </button>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <input 
+        type="text"
+        id="search"
+        onkeyup="display()"
+        placeholder="🔍 Rechercher..."
+        class="w-full px-4 py-3 bg-white rounded-xl border mb-6 focus:border-indigo-400 focus:outline-none"
+      >
+
+      <!-- Notes -->
+      <div id="list"></div>
+
+    </div>
+  </div>
+
+  <script>
+    let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+
+    function save() {
+      const text = document.getElementById('note').value.trim();
+      if (!text) return;
+
+      const words = text.split(' ');
+      const title = words.slice(0, 5).join(' ') + (words.length > 5 ? '...' : '');
+      
+      notes.unshift({
+        id: Date.now(),
+        text: text,
+        title: title,
+        date: new Date().toLocaleDateString('fr-CA')
+      });
+
+      localStorage.setItem('notes', JSON.stringify(notes));
+      document.getElementById('note').value = '';
+      display();
+    }
+
+    function display() {
+      const search = document.getElementById('search').value.toLowerCase();
+      const filtered = notes.filter(n => 
+        n.text.toLowerCase().includes(search) || 
+        n.title.toLowerCase().includes(search)
+      );
+
+      const html = filtered.length === 0 ? 
+        '<div class="text-center py-16"><p class="text-slate-500 text-lg">Aucune note</p></div>' :
+        filtered.map(n => `
+          <div class="bg-white rounded-xl border p-5 mb-4 hover:shadow-lg transition">
+            <div class="flex justify-between items-start">
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-800 mb-2">✨ ${n.title}</h3>
+                <p class="text-slate-600 text-sm mb-2">${n.text}</p>
+                <p class="text-xs text-slate-400">${n.date}</p>
+              </div>
+              <button onclick="del(${n.id})" class="text-red-600 hover:bg-red-50 p-2 rounded">🗑️</button>
+            </div>
+          </div>
+        `).join('');
+
+      document.getElementById('list').innerHTML = html;
+    }
+
+    function del(id) {
+      if (confirm('Supprimer?')) {
+        notes = notes.filter(n => n.id !== id);
+        localStorage.setItem('notes', JSON.stringify(notes));
+        display();
+      }
+    }
+
+    display();
+  </script>
+
 </body>
 </html>
