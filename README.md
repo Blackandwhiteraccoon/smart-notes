@@ -1,49 +1,75 @@
-Autodidacte | 48 ans | Québec | Hardware & Linux Specialist | IA Enthusiast
-Mon parcours atypique
-Ma passion pour la tech a débuté à 4 ans avec un Commodore 64 que j'ai supplié au Père Noël. Après avoir navigué à travers les Pentium, 386, 486, je me suis éloigné de l'informatique pendant mes années de jeunesse.
-27 ans dans l'industrie manufacturière - J'ai grimpé les échelons d'une usine de fabrication, devenant président syndical pendant 15 ans. J'ai appris la résilience, le leadership et comment faire tenir les gens debout face à l'injustice.
-Le grand virage (2021-présent) - Une blessure chronique au dos m'a forcé à repenser ma carrière. J'ai transformé ce défi en opportunité: retour à ma première passion, l'informatique.
-Ce que j'ai accompli en 3 ans (autodidacte)
-Systèmes & Infrastructure:
+# ✨ Smart Notes
 
-✅ Maîtrise de Linux (testé la majorité des distributions)
-✅ Terminal/Bash scripting
-✅ Proxmox, networking, visualisation 3D des infrastructures
-✅ Systèmes de surveillance et caméras IP
+**Application de notes locale et privée - Zéro cloud, zéro inscription, zéro bullshit.**
 
-Hardware & Mining:
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-✅ Construction de rigs de minage, serveurs custom
-✅ Toujours à l'affût et up-to-date des composants
-✅ Maîtrise des OS spécialisés en mining (HiveOS, NiceHash, MinerStat)
-✅ Suivi constant de l'évolution du créneau crypto
+## 🎯 Philosophie
 
-Développement & IA:
+Smart Notes est une app **délibérément locale**. Pas de cloud, pas de sync, pas d'inscription. 
+Juste toi, ton navigateur, et tes notes. **Privacy-first.**
 
-✅ Développement web (GitHub, Vercel, déploiement)
-✅ IA & prompt engineering - ma nouvelle frontière
-✅ Première application fonctionnelle déployée
+## ⚠️ IMPORTANT - Stockage Local
 
-Vision & Projets:
+- 📦 **Tes notes sont dans le navigateur** (localStorage)
+- 🚫 **PAS de sync** entre appareils
+- 💾 **Vider le cache = perdre les notes**
+- ✅ **Parfait si**: 1 machine, pas de cloud voulu
+- ❌ **Pas idéal si**: plusieurs machines/appareils
 
-💡 Multiples idées de projets domotiques (ergonomie, gains de production, amélioration qualité de vie, just for fun)
-📊 Études de marché dans plusieurs secteurs
-🔍 Constamment à l'affût de nouvelles niches potentielles
+**Backup recommandé**: Copie tes notes importantes ailleurs!
 
-Ma force
-Je suis un apprenant kinesthésique - je dois voir et faire pour comprendre. L'école traditionnelle n'était pas pour moi, mais l'ère des tutoriels YouTube et de l'IA? C'est mon terrain de jeu.
-TDAH, multitâche naturel, et toujours 10 projets en tête. L'IA m'aide à canaliser ce chaos créatif en solutions concrètes.
-Mes valeurs
-Justice et éthique - C'est dans ma nature profonde d'être juste. Je déteste l'injustice et l'autorité sans logique ("je suis le boss" pour dire "je suis le boss"). Mes 15 ans comme président syndical en témoignent.
-Amélioration continue - J'essaie constamment de m'améliorer en tant qu'individu, en considérant les aspects moraux, environnementaux, et les générations futures (mon kid).
-Pragmatisme - Mon but n'est pas de devenir millionnaire, mais simplement de pouvoir faire ce qui m'intéresse au moment présent. Très ouvert d'esprit, je cherche des solutions qui ont du sens.
-Pourquoi moi?
+## 🌟 Fonctionnalités
 
-🔥 Passion authentique pour la tech depuis 44 ans
-💪 Résilience forgée par l'expérience de vie
-🧠 Capacité d'apprentissage rapide (quand ça m'intéresse!)
-🛠️ Mindset de problem-solver (15 ans à régler des conflits syndicaux)
-⚖️ Sens aigu de la justice et de l'éthique
-🚀 J'arrive dans l'IA au bon moment - et je vais à fond
+- 🤖 Analyse IA automatique (titres, résumés, mots-clés)
+- 🔍 Recherche instantanée
+- 💾 Stockage 100% local (localStorage)
+- 🎨 Interface minimaliste
+- ⚡ Ultra rapide (pas de serveur)
+- 🔒 Privé par défaut
 
-"Les baby-boomers sont à la retraite. Plus besoin de diplômes comme quand j'étais jeune. Juste des compétences réelles et de la détermination."
+## 🚀 Utilisation
+
+👉 [Essayer Smart Notes](https://smart-notes-topaz.vercel.app)
+
+Ou cloner localement:
+```bash
+git clone https://github.com/Blackandwhiteraccoon/smart-notes.git
+cd smart-notes
+open index.html
+```
+
+## 🛣️ Roadmap
+
+### v1.0 (Actuelle) ✅
+- [x] Notes avec IA intégrée
+- [x] Recherche intelligente
+- [x] Interface épurée
+- [x] Stockage local
+
+### v2.0 (En développement) 🚧
+- [ ] **Export/Import JSON** (backup manuel)
+- [ ] **Analyse IA améliorée** (résumés plus intelligents)
+- [ ] **Catégories/Tags personnalisés**
+- [ ] **Thème sombre**
+
+### v3.0 (Future) 💭
+- [ ] **Version sync optionnelle** (pour multi-appareils)
+- [ ] Support images/photos
+- [ ] Export PDF/Markdown
+- [ ] Chiffrement des notes
+
+## 💝 Soutenir le projet
+
+Si Smart Notes t'aide au quotidien:
+- ⭐ [Star sur GitHub](https://github.com/Blackandwhiteraccoon/smart-notes)
+- ☕ [Buy me a coffee](https://buymeacoffee.com/carllasolw)
+
+## 📄 Licence
+
+MIT - Utilise et modifie comme tu veux.
+
+---
+
+**Made with ❤️ and ✨ by a Québécois autodidact**
